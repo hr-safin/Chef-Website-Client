@@ -6,12 +6,6 @@ const TopSelling = () => {
 
     const [selling, setSelling] = useState([])
 
-    // const allFood = useLoaderData()
-    // console.log(allFood)
-
-    // const mapped = allFood.map(item => item)
-    // console.log(mapped)
-
     useEffect(() => {
         fetch("https://server-side-three-zeta.vercel.app/topSellingFoods")
         .then(res => res.json())

@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
       <Card className="w-full max-w-[32rem] shadow-lg">
         <CardHeader floated={false} color="blue-gray">
           <img
-            className="h-[250px] w-full"
+            className="h-[220px] w-full"
             src={data.foodImage}
             alt="ui/ux review check"
           />

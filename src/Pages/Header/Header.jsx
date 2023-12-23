@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaTimes, FaStream } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-// import { AuthProvider } from "../AuthContext/AuthContext";
 import { ToastContainer, toast } from 'react-toastify';
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,9 +8,8 @@ import Logo from "../../assets/Logo.png"
 import { BsMoonStars ,BsCartCheck,BsSun } from "react-icons/bs";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Header = () => {
-    const {user, logOut} = useContext(AuthContext)
+  const {user, logOut} = useContext(AuthContext)
   const [nav, setNav] = useState(false);
-  // const [show, setShow] = useState(true);
   const [avatar, setAvatar] = useState(false);
   const [toggle, setToggle] = useState(false)
   const [show, setShow] = useState(false)
@@ -23,48 +21,7 @@ const Header = () => {
 //   const { logOut, user,setUser, loading } = useContext(AuthProvider);
   const navigate = useNavigate();
 
-//   const [theme, setTheme] = useState("light")
-//    const element = document.documentElement
-//    const darkQuery = window.matchMedia("(prefers-color-scheme : light)")
-//   const options = [
-//     {
-//     icon : "sunny-outline",
-//     text : "light"
-//   },
-//   {
-//     icon : "moon-outline",
-//     text : "dark"
-//   }
-// ]
 
-// const onWindowMatch = () => {
-//   if(localStorage.theme === "dark" || (!("theme" in localStorage) && darkQuery.matches)
-  
-//   ){
-//     element.classList.add("dark")
-//   }
-// }
-
-// onWindowMatch()
-
-// useEffect(() => {
-//   switch(theme) {
-//     case "dark" :
-//     element.classList.add("dark")
-//     localStorage.setItem("theme", "dark")
-//     break
-
-//     case "light" :
-//       element.classList.remove("dark")
-//       localStorage.setItem("theme", "light")
-//       break 
-
-//       default : 
-//       localStorage.removeItem("theme")
-//       break
-//   }
- 
-// }, [theme])
   
   const handleShow = () => {
     setAvatar((prev) => !prev);
@@ -100,7 +57,7 @@ const Header = () => {
         <div className=" fixed z-50 border-b border-gray-200  bg-white    py-4 rounded-lg w-[95%]  mx-3 lg:mx-16 px-6 my-4   dark:border-b lg:w-[90%]  flex justify-between items-center  text-black  ">
       <h2 className="  text-3xl sm:text-3xl md:text-3xl font-bold ">
         <Link  className="flex gap-2 items-center" to="/">
-            <img className=" w-14 h-14" src={Logo} alt="" />
+            <img className=" w-10 h-10" src={Logo} alt="" />
           <span className="">Chef </span>
         </Link>
       </h2>
@@ -148,78 +105,8 @@ const Header = () => {
             All Food
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/blog"
-            className={({ isActive }) =>
-              `block py-2 pr-4 pl-3 duration-200 ${
-                isActive
-                  ? "text-yellow-700  underline-offset-4"
-                  : "text-gray-700 dark:text-gray-600"
-              } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-yellow-800 lg:p-0`
-            }
-          >
-            Blog
-          </NavLink>
-        </li>
-        
-        {/* {user &&  (
-          <li>
-            <NavLink
-              to="/event"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive
-                    ? "text-blue-800 underline underline-offset-4"
-                    : "text-gray-700 dark:text-gray-600"
-                } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-800 lg:p-0`
-              }
-            >
-              Latest Events
-            </NavLink>
-          </li>
-        )}
-        {user && (
-          <li>
-            <NavLink
-              to="/blogs"
-              className={({ isActive }) =>
-                `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive
-                    ? "text-blue-800 underline underline-offset-4"
-                    : "text-gray-700 dark:text-gray-600"
-                } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-800 lg:p-0`
-              }
-            >
-              Blog
-            </NavLink>
-          </li>
-        )}
-        <li>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `block py-2 pr-4 pl-3 duration-200 ${
-                isActive
-                  ? "text-blue-800 underline underline-offset-4"
-                  : "text-gray-700 dark:text-gray-600"
-              } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-800 lg:p-0`
-            }
-          >
-            Contact
-          </NavLink>
-        </li> */}
       </ul>
       <div className=" hidden gap-5  items-center lg:flex">
-        
-        
-
-        
-        
-       
-        
-        
-        
         {user && user?.email ? (
           <>
             <div className="avatar">
@@ -229,9 +116,7 @@ const Header = () => {
               >
                 <img
                   src={
-                    user.photoURL
-                      // ? user.photoURL
-                      // : "https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png"
+                    user?.photoURL    
                   }
                 />
               </div>
@@ -288,7 +173,7 @@ const Header = () => {
         ) : (
           <Link
             to="/signIn"
-            className=" bg-yellow-700 hover:text-black border-2 border-yellow-600 text-gray-800 dark:text-gray-400 hover:border-2  lg:mr-3 focus:ring-4 focus:ring-yellow-300  rounded-lg text-sm px-4 lg:px-6 py-3 tracking-widest font-semibold lg:py-2.5 mr-2 focus:outline-none"
+            className=" bg-yellow-700 hover:text-black border-2 border-yellow-600 text-gray-800 dark:text-gray-400 hover:border-2  lg:mr-3 focus:ring-4 focus:ring-yellow-300  rounded-lg text-sm px-4 lg:px-6 py-2.5 tracking-widest font-semibold lg:py-2.5 mr-2 focus:outline-none"
           >
             Login
           </Link>
