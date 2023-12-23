@@ -102,7 +102,7 @@ const handleGoogle = () => {
           Sign In
         </Button>
         <button onClick={handleGoogle} className=" tracking-wider font-bold py-2 border-2 border-white hover:border-2 hover:border-gray-900  w-full rounded-lg mt-3" type="submit">
-         SIGN WITH GOGGLE
+         SIGN WITH GOOGLE
         </button>
         <Typography variant="small" className="mt-6 flex justify-center">
           Don&apos;t have an account?
