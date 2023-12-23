@@ -74,13 +74,8 @@ const Registration = () => {
     <>
     <Helmet><title>Chef | Registration</title></Helmet>
     <Header2 />
-    <div className="w-full  relative">
-        <img  className="w-full h-[400px]  bg-center bg-cover object-cover" src="https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-black-meat-western-food-banner-background-image_194600.jpg" alt="" />
-        </div>
-        <div className="brightness-90  absolute w-full top-56    flex  justify-center ">
-            <h2 className="text-white text-5xl tracking-widest ">Registration</h2>
-        
-        </div>
+    
+     
 
         <div className=" bg-[#121212]  py-20 lg:py-10">
       <section>

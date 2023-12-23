@@ -156,18 +156,25 @@ const Header2 = () => {
             </div>
             <h2 className=" pt-3 pb-2 text-md text-center font-semibold  text-gray-800 dark:text-gray-400">Name : {user.displayName}</h2>
               <h2 className=" text-md text-center font-semibold pb-4  text-gray-800 dark:text-gray-400">Email : {user.email}</h2>
-              {user.email === "adminsafin@gmail.com"  && <button className="  text-lg border-2 border-gray-100 hover:border-2 hover:bg-indigo-700 hover:border-indigo-700 mb-3 text-indigo-700 hover:text-white  rounded-md py-2 px-4">
-                {user.email === "adminsafin@gmail.com" && <NavLink to="/dashboard">Dashboard</NavLink>}
-              </button> }
+              
             </div>
-            {user && <ul className=" py-3 space-y-3">
-                <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/myFood">My Added Food Items</Link>
+            <ul className=" py-3 space-y-3">
+            {user && user?.email === "admin5@gmail.com" && <><li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/myFood">My Added Food Items</Link>
                 </li>
                 <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/addFood">Add a Food Item</Link>
                 </li>
-                <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/orderFood">My Ordered Food Items</Link>
-                </li>
-              </ul> }
+                
+                </>
+               }
+               {user && 
+               <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> 
+               <Link to="/orderFood">My Order</Link>
+               </li>
+               
+               }
+               
+               </ul>
+            
               <div className=" w-full" onClick={handleRemove}>
               <button
                 className="text-black dark:text-gray-400 text-lg border-2 hover:border-2 hover:bg-yellow-600 hover:text-white border-yellow-700 mb-3  rounded-md w-full py-2 px-4"
@@ -244,7 +251,7 @@ const Header2 = () => {
         className={
           !nav
             ? "hidden"
-            : "absolute transition-all duration-500 ease-in-out w-[60%] h-screen top-0 right-0 flex flex-col justify-center items-center bg-slate-100 bg-white rounded-lg dark:bg-slate-900 text-black dark:text-gray-400 "
+            : "absolute transition-all duration-500 ease-in-out w-[70%] h-screen top-0 right-0 flex flex-col justify-center items-center bg-slate-100 bg-white rounded-lg dark:bg-slate-900 text-black dark:text-gray-400 "
         }
       >
         <div className=" flex flex-col justify-center items-center pt-6 pb-4">
@@ -257,8 +264,7 @@ const Header2 = () => {
               >
                 <img
                   src={
-                    user?.photoURL
-                      
+                    user?.photoURL  
                       
                   }
                 />
@@ -272,11 +278,7 @@ const Header2 = () => {
               
             >
               <h2 className=" text-sm text-center font-semibold text-gray-800 dark:text-gray-400 pb-2 pt-4 ">Name : {user.displayName}</h2>
-              <h2 className=" text-sm  text-center font-semibold  text-gray-800 dark:text-gray-400 pb-4">Email : {user.email}</h2>
-              {user.email === "adminsafin@gmail.com"  && <button className="  text-lg border-2 border-gray-100 hover:border-2 hover:bg-indigo-700 hover:border-indigo-700 mb-3 text-indigo-700 hover:text-white  rounded-md py-2 px-4">
-                {user.email === "adminsafin@gmail.com" && <NavLink to="/dashboard">Dashboard</NavLink>}
-              </button> }
-              
+              <h2 className=" text-sm  text-center font-semibold  text-gray-800 dark:text-gray-400 pb-4">Email : {user.email}</h2>         
               
               
             </div>
@@ -292,36 +294,27 @@ const Header2 = () => {
         <li onClick={handleClick} className="py-2 text-base">
           <Link to="/food">All Food</Link>
         </li>
-        <li onClick={handleClick} className="py-2 text-base">
-          <Link to="/blog">Blog</Link>
-        </li>
-        {/* {user?.email && (
-          <li onClick={handleClick} className="py-3 text-base">
-            <Link to="/event">Latest Events</Link>
-          </li>
-        )}
-        {user?.email && (
-          <li onClick={handleClick} className="py-3 text-base">
-            <Link to="/blogs">Blog</Link>
-          </li>
-        )}
-        <li onClick={handleClick} className="py-3 text-base">
-          <Link to="/contact">Contact Us</Link>
-        </li> */}
-        {user && <ul className=" py-1 space-y-3">
-                <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/myFood">My Added Food Items</Link>
+        <ul className=" py-1 space-y-3">
+            {user && user?.email === "admin5@gmail.com" && <><li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/myFood">My Added Food Items</Link>
                 </li>
                 <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/addFood">Add a Food Item</Link>
                 </li>
-                <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> <Link to="/orderFood">My Ordered Food Items</Link>
-                </li>
-              </ul> }
-        
-        <div className=" flex flex-col pt-4 gap-5 items-center">
-          {user?.email ? <button
-                className="text-white   bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-4   py-3 "
-                onClick={handleLogOut}
+                
+                </>
+               }
+               {user && 
+               <li className="text-center border-2 border-white w-full hover:border-2 hover:border-yellow-700 py-3 px-3 rounded-md"> 
+               <Link to="/orderFood">My Order</Link>
+               </li>
                
+               }
+               
+               </ul>
+        
+        <div className=" flex flex-col pt-1 gap-5 items-center">
+          {user?.email ? <button
+                className="text-white   bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-6   py-2.5 "
+                onClick={handleLogOut}
               >
                 Logout
               </button> :  <Link onClick={handleClick} to="/SignIn">
@@ -329,14 +322,12 @@ const Header2 = () => {
                 Login
               </button>
             </Link>}
-           
-         
           {user?.email ? (
             ""
           ) : (
             <NavLink onClick={handleClick} to="/signup">
-              <button className="dark:text-gray-400 px-4 cursor-pointer border  text-gray-900  py-2   rounded-md ">
-                Get Started Free
+              <button className="dark:text-gray-400 px-4 cursor-pointer border border-gray-900  text-gray-900  py-2   rounded-md ">
+                Get Started 
               </button>
             </NavLink>
           )}
