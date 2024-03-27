@@ -65,7 +65,7 @@ const Food = () => {
         </Helmet>
         <div className=' bg-[#121212]   w-full h-screen relative'>
             
-            <img className='w-full  brightness-75  mx-auto h-[60%] my-auto bg-center bg-cover object-cover'  src="https://tastyc.bslthemes.com/wp-content/uploads/2021/04/gallery-i-6.jpg" alt="" />
+            <img className='w-full  brightness-75  mx-auto h-[60%] my-auto bg-center bg-cover object-cover'  src="https://i.postimg.cc/DZkRVH0B/allFood.webp" alt="" />
             <div class="absolute inset-0"></div>
             <div className=' absolute w-full top-0 left-0 h-full'>
 
